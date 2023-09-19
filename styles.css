@@ -143,6 +143,7 @@ section{
     margin-bottom: 5px;
     font-weight: 300;
     animation: fadeInUp 0.5s ease-in-out;
+    animation: fadeColor 1.7s linear infinite;
     color: red;
 }
 
@@ -305,6 +306,20 @@ footer ul li a:hover{
     background-color: rgb(232, 0, 0)
 }
 
+/* Overlay */
+.overlay-show{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.stop-scrolling{
+    overflow: hidden;
+}
 
 /* Animations */
 
@@ -317,6 +332,42 @@ footer ul li a:hover{
     opacity: 1;
     transform: translateY(0);
    } 
+}
+
+@keyframes fadeColor {
+    0%{
+        color: red
+    }
+    10%{
+        color: orangered;
+    }
+    20% {
+        color: darkorange;
+    }
+    30% {
+        color: orange
+    }
+    40% {
+        color: rgb(249, 210, 15)
+    }
+    50%{
+        color: rgb(240, 219, 29)
+    }
+    60%{
+        color:  rgb(249, 210, 15)
+    }
+    70%{
+        color:orange
+    }
+    80%{
+        color: darkorange;
+    }
+    90%{
+        color: orangered;
+    }
+    100%{
+        color: red
+    }
 }
 
 @keyframes fadeBounce {
