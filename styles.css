@@ -402,6 +402,18 @@ footer ul li a:hover{
    } 
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(140px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeColor {
     0%{
         color: red
@@ -436,6 +448,36 @@ footer ul li a:hover{
     100%{
         color: red
     }
+}
+
+/* Inner pages */
+.bg-falcon-9{
+    background-image: url(./img/falcon-9.webp);
+}
+
+.section-animate{
+    animation: fadeIn 2s ease-in-out;
+}
+
+.section-inner-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-inner-center h3{
+    font-size: 100px;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.section-inner-center p{
+    font-size: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
 }
 
 @keyframes fadeBounce {
