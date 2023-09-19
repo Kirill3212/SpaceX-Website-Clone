@@ -6,6 +6,20 @@
     box-sizing: border-box;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 body{
     font-family: 'Familjen Grotesk', sans-serif;
     background-color: #000;
@@ -143,7 +157,7 @@ section{
     margin-bottom: 5px;
     font-weight: 300;
     animation: fadeInUp 0.5s ease-in-out;
-    animation: fadeColor 1.7s linear infinite;
+    animation: fadeColor 5s linear infinite;
     color: red;
 }
 
@@ -321,8 +335,62 @@ footer ul li a:hover{
     overflow: hidden;
 }
 
-/* Animations */
+/* Hide mobile main menu items */
+.mobile-only{
+    display: none;
+}
 
+/* Mobile menu */
+.mobile-main-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    z-index: 4;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+/* Bring menu from right */
+.show-menu{
+    transform: translateX(0);
+    padding-top: 50px;
+}
+
+.mobile-main-menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.mobile-main-menu ul li{
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 1px #fff dotted;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+.mobile-main-menu ul li a{
+    color: #fff;
+    transition: color 0.6s;
+}
+
+.mobile-main-menu ul li a:hover {
+    color: #aaa;
+}
+
+/* Animations */
 @keyframes fadeInUp {
    0%{
     opacity: 0;
@@ -386,12 +454,16 @@ footer ul li a:hover{
 }
 
 /* Media Queries */
-
 @media(max-width: 960px) {
     /* hide desktop menu */
     .desktop-main-menu{
         display: none;
     }
+    /* show main mobile items */
+    .mobile-only{
+        display: block;
+    }
+
 }
 
 @media(max-width: 600px) {
